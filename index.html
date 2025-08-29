@@ -4,175 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raheel Ghafoor - Flutter Developer CV</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+        background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #64FFDA;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        color: #2c3e50;
+        padding-bottom: 6px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #64FFDA;
+        font-size: 1.4rem;
+    }
+
+    .summary {
+        text-align: justify;
+        font-size: 1rem;
+    }
+
+    /* Grid Adjustments */
+    .skills-grid,
+    .apps-grid,
+    .software-grid {
+        display: grid;
+        gap: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .apps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .software-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .skill-category,
+    .app-item,
+    .software-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        border-left: 4px solid #2c3e50;
+    }
+
+    .app-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-list {
+        margin-top: 10px;
+    }
+
+    .skill-list li {
+        margin-bottom: 8px;
+        list-style-type: none;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .skill-list li:before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #64FFDA;
+    }
+
+    .job {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .job:last-child {
+        border-bottom: none;
+    }
+
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .company {
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    .date {
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    .job-title {
+        font-style: italic;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    .software-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+
+    .proficiency {
+        width: 100%;
+        background: #e9ecef;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+    .proficiency-level {
+        height: 8px;
+        background: #2c3e50;
+    }
+
+    .advanced { width: 95%; }
+    .very-good { width: 85%; }
+    .good { width: 75%; }
+
+    .education-item,
+    .language-item {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #2c3e50;
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    /* ✅ Mobile Optimization */
+    @media (max-width: 768px) {
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        .title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #64FFDA;
-        }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .main-content {
-            padding: 30px;
-        }
-        section {
-            margin-bottom: 30px;
+            font-size: 1.8rem;
         }
         h2 {
-            color: #2c3e50;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #64FFDA;
+            font-size: 1.2rem;
         }
-        .summary {
-            text-align: justify;
+        .title {
+            font-size: 1rem;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-        }
-        .skill-category {
-            background: #f8f9fa;
+        .main-content {
             padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #2c3e50;
         }
-        .skill-list {
-            margin-top: 10px;
-        }
-        .skill-list li {
-            margin-bottom: 8px;
-            list-style-type: none;
-            position: relative;
-            padding-left: 20px;
-        }
-        .skill-list li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: #64FFDA;
-        }
-        .job {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        .job:last-child {
-            border-bottom: none;
+        .contact-info {
+            flex-direction: column;
+            align-items: center;
         }
         .job-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .company {
-            font-weight: bold;
-            color: #2c3e50;
+        .summary {
+            font-size: 0.95rem;
         }
-        .date {
-            color: #777;
+    }
+
+    /* ✅ Extra small screens */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5rem;
         }
-        .job-title {
-            font-style: italic;
-            margin-bottom: 10px;
+        body {
+            font-size: 14px;
         }
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .app-item {
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-        .app-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+        .skills-grid,
+        .apps-grid,
         .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr;
         }
-        .software-item {
-            margin-bottom: 15px;
-        }
-        .software-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .proficiency {
-            width: 100%;
-            background: #e9ecef;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .proficiency-level {
-            height: 8px;
-            background: #2c3e50;
-        }
-        .advanced { width: 95%; }
-        .very-good { width: 85%; }
-        .good { width: 75%; }
-        .education-item, .language-item {
-            margin-bottom: 15px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            .job-header {
-                flex-direction: column;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div class="container">
